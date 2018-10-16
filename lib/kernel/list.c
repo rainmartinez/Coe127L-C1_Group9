@@ -61,6 +61,7 @@ void
 list_init (struct list *list)
 {
   ASSERT (list != NULL);
+
   list->head.prev = NULL;
   list->head.next = &list->tail;
   list->tail.prev = &list->head;
@@ -170,6 +171,10 @@ list_insert (struct list_elem *before, struct list_elem *elem)
 {
   ASSERT (is_interior (before) || is_tail (before));
   ASSERT (elem != NULL);
+
+  /* Abraham driving */
+
+  //elem->node_lock = before->node_lock; /* gave a copy of the lock to the new element we just added */
 
   elem->prev = before->prev;
   elem->next = before;
@@ -522,5 +527,3 @@ list_min (struct list *list, list_less_func *less, void *aux)
     }
   return min;
 }
-
-
