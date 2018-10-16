@@ -1,5 +1,7 @@
 # -*- makefile -*-
 
+# WARNING: Don't edit me!  I am automatically generated. 
+
 SRCDIR = ../..
 
 all: kernel.bin loader.bin
