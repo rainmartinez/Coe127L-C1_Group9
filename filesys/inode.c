@@ -7,7 +7,6 @@
 #include "filesys/free-map.h"
 #include "threads/malloc.h"
 
-
 /* Identifies an inode. */
 #define INODE_MAGIC 0x494e4f44
 
@@ -158,7 +157,7 @@ inode_get_inumber (const struct inode *inode)
   return inode->sector;
 }
 
-/* Closes INODE and writes it to disk.
+/* Closes INODE and writes it to disk. (Does it?  Check code.)
    If this was the last reference to INODE, frees its memory.
    If INODE was also a removed inode, frees its blocks. */
 void
